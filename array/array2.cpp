@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+struct array
+{
+int A[10];
+int size;
+int length;
+};
+void display(struct array arr)
+{
+int i;
+cout<<"elements are'\n'";
+for(i=0; i<arr.length; i++)
+{
+cout<<A[i];
+}}
+ 
+void append(struct array *arr, int index, int x)
+{
+if(arr->length < arr->size)
+{
+arr->A[arr->length ++]=x;
+}
+}
+void insert(struct *arr, int index, int x)
+{
+int i;
+if(index>=0; && index<=arr->length)
+{
+for(i=arr->length; i>index; i--)
+{
+arr->A[i]=arr->A[i-1];
+arr->A[index] =x;
+arr->length++;
+}
+}
+
+int main()
+{
+struct Array arr1={{2,3,4,5,6},10,5};
+Append(&arr1,10);
+Insert(&arr1,0,12);
+Display(arr1);
+ return 0;
