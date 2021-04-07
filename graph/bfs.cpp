@@ -1,44 +1,53 @@
 #include <bits/stdc++.h>
 using namespace std;
-void addedge(vector<int> vr[], int u, int v)
+void add_edge(vector<int> vrr[], int u, int v)
 {
-    vr[u].push_back(v);
-    vr[v].push_back(u);
+    vrr[u].push_back(v);
+    vrr[v].push_back(u);
 }
-void bfs(vector<int> vr[], int s, int v)
+void bfs(vector<int> adj[], int v, int s)
 {
-    bool btf[v + 1];
-    memset(btf, 0, v + 1);
+    bool visited[v];
+    for (int i = 0; i < v; i++)
+    {
+        visited[i] = false;
+    }
     queue<int> q;
+    visited[s] = true;
     q.push(s);
-    btf[s] = true;
     while (q.empty() == false)
     {
-            int u = q.front();
-            cout << u << " ";
-            q.pop();
-            for (int x : vr[u])
+        int top = q.front();
+        q.pop();
+        cout << top << " ";
+        for (int i : adj[top])
+        {
+            if (visited[i] == false)
             {
-                if (btf[x] == false)
-                {
-                    btf[x] = true;
-                    q.push(x);
-                }
+                visited[i] = true;
+                q.push(i);
             }
-     }
+        }
+    }
 }
+
 int main()
 {
-    int v, e;
-    cin >> v >> e;
-    vector<int> vr[v];
+
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    int n,e;
+    cin >> n>> e; // n= edge
+    vector<int> vr[n];
     for (int i = 0; i < e; i++)
     {
         int u, v;
-        cin >> u >> v;2
-        addedge(vr, u, v);
+        cin >> u >> v;
+        add_edge(vr, u, v);
     }
-    bfs(vr, 0, v);
-
+    int source;
+    cin >> source;
+   // printedge(vr, n);
+    bfs(vr, n, source);
     return 0;
 }

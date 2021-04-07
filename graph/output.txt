@@ -1,0 +1,15 @@
+0 -1
+1 0
+4 1
+9 4
+9gfdfgsfds 4
+4gfdfgsfds 1
+1gfdfgsfds 0
+2 0
+5 2
+5gfdfgsfds 2
+6 2
+6gfdfgsfds 2
+2gfdfgsfds 0
+else
+Yes
